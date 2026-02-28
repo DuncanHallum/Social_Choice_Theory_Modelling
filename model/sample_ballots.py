@@ -7,9 +7,9 @@ from pathlib import Path
 
 BASE_PATH = Path(__file__).parent.parent
 
-N_VOTERS = 10 #100000 # Rough size of Bristol constituency
+N_VOTERS = 1000
 PARTIES = ["Cons", "Lab", "LibDem", "Green", "Reform"]
-EMISSION_DIST = [0.2, 0.23, 0.13, 0.13, 0.31] # from ipsos voting intention opinion poll
+EMISSION_DIST = [0.2, 0.23, 0.13, 0.13, 0.31] # from ipsos voting intention opinion poll 06/02/26
 PARTY_IDS = [1101, 1102, 1104, 1107, 1110]
 ELECTION_YEAR = 2024
 ATTRIBUTES = ["lrecon", "galtan"]
@@ -67,7 +67,7 @@ def get_samples(gmm: GaussianMixture, means, n_voters: int, utility_fn=None):
 
     utility_fn(point, party_mean)
 
-    Default utility = negative Euclidean distance (dimension-agnostic).
+    Default utility = negative Euclidean distance.
     """
 
     means = np.asarray(means)
