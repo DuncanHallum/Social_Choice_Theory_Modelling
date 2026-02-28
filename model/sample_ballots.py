@@ -26,7 +26,7 @@ def get_emission_dist(weight_vector):
 # GET & CLEAN DATA FRAME
 def get_data(BASE_PATH, PARTY_IDS):
     df = pd.read_csv(BASE_PATH/"data"/"1999-2024_CHES_dataset_means.csv")
-    df = df[df["year"] == 2024]
+    df = df[df["year"] == ELECTION_YEAR]
     df = df[df["party_id"].isin(PARTY_IDS)]
     return df
 
